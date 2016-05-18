@@ -45,7 +45,7 @@
                       <sourceRoot>src/main/java-generated</sourceRoot>
                       <wsdlOptions>
                           <wsdlOption>
-                              <wsdl>${basedir}/src/main/resources/wsdl/TopDownSimpleService.wsdl</wsdl>
+                              <wsdl>${basedir}/src/main/resources/wsdl/DLService.wsdl</wsdl>
                           </wsdlOption>
                       </wsdlOptions>
                   </configuration>

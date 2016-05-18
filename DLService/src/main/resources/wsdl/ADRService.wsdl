@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://dlservice.soacourse.unsw.edu.au" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DLService" targetNamespace="http://dlservice.soacourse.unsw.edu.au">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://dlservice.soacourse.unsw.edu.au">
+       <xsd:element name="DLValidateRequest">
+      	<xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DLNumber" nillable="false" type="xsd:string"/>
+            <xsd:element name="fullName" nillable="false" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+       </xsd:element>
+       <xsd:element name="DLValidateResponse">
+        <xsd:complexType>
+           <xsd:sequence>
+               <xsd:element name="isValid" nillable="false" type="xsd:string"/>
+           </xsd:sequence>
+        </xsd:complexType>
+       </xsd:element>
+      <xsd:complexType name="serviceFaultType">
+         <xsd:sequence>
+             <xsd:element name="errcode" type="xsd:string"></xsd:element>
+             <xsd:element name="errtext" type="xsd:string"></xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DLValidateFault" type="tns:serviceFaultType"></xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  
+  <wsdl:message name="DLValidateRequestMsg">
+    <wsdl:part name="parameters" element="tns:DLValidateRequest" />
+  </wsdl:message>
+  <wsdl:message name="DLValidateResponseMsg">
+    <wsdl:part name="parameters" element="tns:DLValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DLValidateFaultMsg">
+    <wsdl:part name="parameters" element="tns:DLValidateFault" />
+  </wsdl:message>
+  
+  <wsdl:portType name="DLService">
+    <wsdl:operation name="DLValidate">
+      <wsdl:input message="tns:DLValidateRequestMsg"/>
+      <wsdl:output message="tns:DLValidateResponseMsg"/>
+      <wsdl:fault name="DLValidateFault" message="tns:DLValidateFaultMsg"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="DLServiceSOAP" type="tns:DLService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="DLValidate">
+      <soap:operation soapAction="http://dlservice.soacourse.unsw.edu.au/DLValidate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DLValidateFault">
+      	<soap:fault name="DLValidateFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  <wsdl:service name="DLService">
+    <wsdl:port binding="tns:DLServiceSOAP" name="DLServiceSOAP">
+      <soap:address location="http://localhost:8080/DLService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

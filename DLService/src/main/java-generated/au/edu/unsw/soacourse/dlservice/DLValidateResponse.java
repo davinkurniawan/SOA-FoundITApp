@@ -1,5 +1,5 @@
 
-package au.edu.unsw.soacourse.marketservice;
+package au.edu.unsw.soacourse.dlservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="eventSetID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="isValid" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "eventSetID"
+    "isValid"
 })
-@XmlRootElement(name = "downloadFileRequest")
-public class DownloadFileRequest {
+@XmlRootElement(name = "DLValidateResponse")
+public class DLValidateResponse {
 
     @XmlElement(required = true)
-    protected String eventSetID;
+    protected String isValid;
 
     /**
-     * Gets the value of the eventSetID property.
+     * Gets the value of the isValid property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEventSetID() {
-        return eventSetID;
+    public String getIsValid() {
+        return isValid;
     }
 
     /**
-     * Sets the value of the eventSetID property.
+     * Sets the value of the isValid property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEventSetID(String value) {
-        this.eventSetID = value;
+    public void setIsValid(String value) {
+        this.isValid = value;
     }
 
 }

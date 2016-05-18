@@ -9,8 +9,12 @@
         <import resource="classpath:META-INF/cxf/cxf.xml" />
 
         <jaxws:endpoint 
-          id="helloWorld" 
-          implementor="au.edu.unsw.soacourse.marketservice.TopDownSimpleServiceImpl" 
-          address="/topdownfault" />
+          id="DLService" 
+          implementor="au.edu.unsw.soacourse.dlservice.DLServiceImpl" 
+          address="/dlservice" />
+        <jaxws:endpoint 
+          id="ADRService" 
+          implementor="au.edu.unsw.soacourse.adrservice.ADRServiceImpl" 
+          address="/adrservice" />
           
 </beans>

@@ -1,24 +1,25 @@
 
-package au.edu.unsw.soacourse.marketservice;
+package au.edu.unsw.soacourse.dlservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for serviceFaultType complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="serviceFaultType"&gt;
+ * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="errcode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="errtext" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="DLNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="fullName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,63 +29,64 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "serviceFaultType", propOrder = {
-    "errcode",
-    "errtext"
+@XmlType(name = "", propOrder = {
+    "dlNumber",
+    "fullName"
 })
-public class ServiceFaultType {
+@XmlRootElement(name = "DLValidateRequest")
+public class DLValidateRequest {
 
+    @XmlElement(name = "DLNumber", required = true)
+    protected String dlNumber;
     @XmlElement(required = true)
-    protected String errcode;
-    @XmlElement(required = true)
-    protected String errtext;
+    protected String fullName;
 
     /**
-     * Gets the value of the errcode property.
+     * Gets the value of the dlNumber property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getErrcode() {
-        return errcode;
+    public String getDLNumber() {
+        return dlNumber;
     }
 
     /**
-     * Sets the value of the errcode property.
+     * Sets the value of the dlNumber property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setErrcode(String value) {
-        this.errcode = value;
+    public void setDLNumber(String value) {
+        this.dlNumber = value;
     }
 
     /**
-     * Gets the value of the errtext property.
+     * Gets the value of the fullName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getErrtext() {
-        return errtext;
+    public String getFullName() {
+        return fullName;
     }
 
     /**
-     * Sets the value of the errtext property.
+     * Sets the value of the fullName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setErrtext(String value) {
-        this.errtext = value;
+    public void setFullName(String value) {
+        this.fullName = value;
     }
 
 }
