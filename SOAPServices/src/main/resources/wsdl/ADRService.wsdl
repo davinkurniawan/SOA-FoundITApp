@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://dlservice.soacourse.unsw.edu.au" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DLService" targetNamespace="http://dlservice.soacourse.unsw.edu.au">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://adrservice.soacourse.unsw.edu.au" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ADRService" targetNamespace="http://adrservice.soacourse.unsw.edu.au">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://dlservice.soacourse.unsw.edu.au">
-       <xsd:element name="DLValidateRequest">
+    <xsd:schema targetNamespace="http://adrservice.soacourse.unsw.edu.au">
+       <xsd:element name="ADRValidateRequest">
       	<xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="DLNumber" nillable="false" type="xsd:string"/>
+            <xsd:element name="address" nillable="false" type="xsd:string"/>
             <xsd:element name="fullName" nillable="false" type="xsd:string"/>
           </xsd:sequence>
         </xsd:complexType>
        </xsd:element>
-       <xsd:element name="DLValidateResponse">
+       <xsd:element name="ADRValidateResponse">
         <xsd:complexType>
            <xsd:sequence>
                <xsd:element name="isValid" nillable="false" type="xsd:string"/>
@@ -23,47 +23,47 @@
              <xsd:element name="errtext" type="xsd:string"></xsd:element>
          </xsd:sequence>
       </xsd:complexType>
-      <xsd:element name="DLValidateFault" type="tns:serviceFaultType"></xsd:element>
+      <xsd:element name="ADRValidateFault" type="tns:serviceFaultType"></xsd:element>
     </xsd:schema>
   </wsdl:types>
   
-  <wsdl:message name="DLValidateRequestMsg">
-    <wsdl:part name="parameters" element="tns:DLValidateRequest" />
+  <wsdl:message name="ADRValidateRequestMsg">
+    <wsdl:part name="parameters" element="tns:ADRValidateRequest" />
   </wsdl:message>
-  <wsdl:message name="DLValidateResponseMsg">
-    <wsdl:part name="parameters" element="tns:DLValidateResponse" />
+  <wsdl:message name="ADRValidateResponseMsg">
+    <wsdl:part name="parameters" element="tns:ADRValidateResponse" />
   </wsdl:message>
-  <wsdl:message name="DLValidateFaultMsg">
-    <wsdl:part name="parameters" element="tns:DLValidateFault" />
+  <wsdl:message name="ADRValidateFaultMsg">
+    <wsdl:part name="parameters" element="tns:ADRValidateFault" />
   </wsdl:message>
   
-  <wsdl:portType name="DLService">
-    <wsdl:operation name="DLValidate">
-      <wsdl:input message="tns:DLValidateRequestMsg"/>
-      <wsdl:output message="tns:DLValidateResponseMsg"/>
-      <wsdl:fault name="DLValidateFault" message="tns:DLValidateFaultMsg"></wsdl:fault>
+  <wsdl:portType name="ADRService">
+    <wsdl:operation name="ADRValidate">
+      <wsdl:input message="tns:ADRValidateRequestMsg"/>
+      <wsdl:output message="tns:ADRValidateResponseMsg"/>
+      <wsdl:fault name="ADRValidateFault" message="tns:ADRValidateFaultMsg"></wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
   
-  <wsdl:binding name="DLServiceSOAP" type="tns:DLService">
+  <wsdl:binding name="ADRServiceSOAP" type="tns:ADRService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="DLValidate">
-      <soap:operation soapAction="http://dlservice.soacourse.unsw.edu.au/DLValidate"/>
+    <wsdl:operation name="ADRValidate">
+      <soap:operation soapAction="http://dlservice.soacourse.unsw.edu.au/ADRValidate"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal"/>
       </wsdl:output>
-      <wsdl:fault name="DLValidateFault">
-      	<soap:fault name="DLValidateFault" use="literal"/>
+      <wsdl:fault name="ADRValidateFault">
+      	<soap:fault name="ADRValidateFault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   
-  <wsdl:service name="DLService">
-    <wsdl:port binding="tns:DLServiceSOAP" name="DLServiceSOAP">
-      <soap:address location="http://localhost:8080/DLService"/>
+  <wsdl:service name="ADRService">
+    <wsdl:port binding="tns:ADRServiceSOAP" name="ADRServiceSOAP">
+      <soap:address location="http://localhost:8080/ADRService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
