@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="isValid" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="validationMsg" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "isValid"
+    "validationMsg"
 })
 @XmlRootElement(name = "ADRValidateResponse")
 public class ADRValidateResponse {
 
     @XmlElement(required = true)
-    protected String isValid;
+    protected String validationMsg;
 
     /**
-     * Gets the value of the isValid property.
+     * Gets the value of the validationMsg property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIsValid() {
-        return isValid;
+    public String getValidationMsg() {
+        return validationMsg;
     }
 
     /**
-     * Sets the value of the isValid property.
+     * Sets the value of the validationMsg property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIsValid(String value) {
-        this.isValid = value;
+    public void setValidationMsg(String value) {
+        this.validationMsg = value;
     }
 
 }

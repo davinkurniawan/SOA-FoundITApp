@@ -13,7 +13,7 @@
        <xsd:element name="ADRValidateResponse">
         <xsd:complexType>
            <xsd:sequence>
-               <xsd:element name="isValid" nillable="false" type="xsd:string"/>
+               <xsd:element name="validationMsg" nillable="false" type="xsd:string"/>
            </xsd:sequence>
         </xsd:complexType>
        </xsd:element>

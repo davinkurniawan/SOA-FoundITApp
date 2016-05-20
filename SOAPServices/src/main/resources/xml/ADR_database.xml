@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<address-book>
+	<person>
+		<fullname>John Doe</fullname>
+		<address>Maroubra Road 1</address>
+	</person>
+	<person>
+		<fullname>Jane Doe</fullname>
+		<address>Kingsford Street 2</address>
+	</person>
+	<person>
+		<fullname>Natalia Djohari</fullname>
+		<address>Barker Street 8/32</address>
+	</person>
+	<person>
+		<fullname>Helen Paik</fullname>
+		<address>Sydney Road 15</address>
+	</person>
+	<person>
+		<fullname>Jennifer Lawrence</fullname>
+		<address>Melbourne Road 20</address>
+	</person>
+</address-book>
