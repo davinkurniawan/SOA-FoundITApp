@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 
 public class DLHandler {
 	private ArrayList<DriversLicense> dl_list;
@@ -14,21 +15,35 @@ public class DLHandler {
 	}
 
 	public void parseDocument(Document doc) {
-		NodeList dl_nodes = doc.getElementsByTagName("driver");
-		for (int i = 0; i < dl_nodes.getLength(); i++) {
+		NodeList drive_nodes = doc.getElementsByTagName("driver");
+		for (int j = 0; j < drive_nodes.getLength(); j++) {
+			Node dn = drive_nodes.item(j);
+			NodeList dl_nodes = dn.getChildNodes();
 			DriversLicense dl = new DriversLicense();
-			Node n = dl_nodes.item(i);
-			if (n.getNodeName().equalsIgnoreCase("fullname"))
-				dl.setFullName(n.getTextContent());
-			else if (n.getNodeName().equalsIgnoreCase("dlno"))
-				dl.setDLNumber(n.getTextContent());
+			
+			for (int i = 0; i < dl_nodes.getLength(); i++) {
+				Node n = dl_nodes.item(i);
+				
+				if (n.getNodeName().equalsIgnoreCase("fullname")) {
+					dl.setFullName(n.getTextContent());
+				}
+				if (n.getNodeName().equalsIgnoreCase("dlno")) {
+					dl.setDLNumber(n.getTextContent());
+				}
+				
+			}
+
 			dl_list.add(dl);
 		}
 	}
 
 	public boolean isFound(DriversLicense dl) {
-		if (dl_list.contains(dl))
-			return true;
+		for(DriversLicense d : dl_list) {
+			if (d.getFullName().equals(dl.getFullName())
+					&& d.getDLNumber().equals(dl.getDLNumber())) {
+				return true;
+			}
+		}
 		return false;
 	}
 }
