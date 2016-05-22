@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:adrservice.soacourse.unsw.edu.au="http://adrservice.soacourse.unsw.edu.au/" xmlns:backgroundcheck="http://soacourse.unsw.edu.au/backgroundcheck" xmlns:dlservice.soacourse.unsw.edu.au="http://dlservice.soacourse.unsw.edu.au/">
+  <process name="backgroundcheck:BackgroundCheck">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="backgroundcheck:BackgroundCheckService" port="BackgroundCheckPort"/>
+    </provide>
+    <invoke partnerLink="dlChecker">
+      <service name="dlservice.soacourse.unsw.edu.au:DLServiceImplService" port="DLServiceImplPort"/>
+    </invoke>
+    <invoke partnerLink="adrChecker">
+      <service name="adrservice.soacourse.unsw.edu.au:ADRServiceImplService" port="ADRServiceImplPort"/>
+    </invoke>
+  </process>
+</deploy>

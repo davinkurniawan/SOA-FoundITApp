@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:ns1="http://adrservice.soacourse.unsw.edu.au"
+	name="ADRService" 
+	targetNamespace="http://adrservice.soacourse.unsw.edu.au">
+	
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://adrservice.soacourse.unsw.edu.au" targetNamespace="http://adrservice.soacourse.unsw.edu.au"
+			version="1.0">
+
+			<xs:element name="ADRValidateFault" type="tns:serviceFaultType" />
+
+			<xs:element name="ADRValidateRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="address" type="xs:string" />
+						<xs:element name="fullName" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="ADRValidateResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="validationMsg" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:complexType name="serviceFaultType">
+				<xs:sequence>
+					<xs:element name="errcode" type="xs:string" />
+					<xs:element name="errtext" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+
+		</xs:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="ADRValidate">
+		<wsdl:part element="ns1:ADRValidateRequest" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ADRValidateResponse">
+		<wsdl:part element="ns1:ADRValidateResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ADRValidateFaultMsg">
+		<wsdl:part element="ns1:ADRValidateFault" name="ADRValidateFaultMsg">
+		</wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:portType name="ADRService">
+		<wsdl:operation name="ADRValidate">
+			<wsdl:input message="ns1:ADRValidate" name="ADRValidate">
+			</wsdl:input>
+			<wsdl:output message="ns1:ADRValidateResponse" name="ADRValidateResponse">
+			</wsdl:output>
+			<wsdl:fault message="ns1:ADRValidateFaultMsg" name="ADRValidateFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

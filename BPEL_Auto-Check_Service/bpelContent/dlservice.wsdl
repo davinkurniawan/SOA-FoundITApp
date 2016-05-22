@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:ns1="http://dlservice.soacourse.unsw.edu.au"
+	name="DLService" 
+	targetNamespace="http://dlservice.soacourse.unsw.edu.au">
+	
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://dlservice.soacourse.unsw.edu.au" targetNamespace="http://dlservice.soacourse.unsw.edu.au"
+			version="1.0">
+
+			<xs:element name="DLValidateFault" type="tns:serviceFaultType" />
+
+			<xs:element name="DLValidateRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DLNumber" type="xs:string" />
+						<xs:element name="fullName" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="DLValidateResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="validationMsg" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:complexType name="serviceFaultType">
+				<xs:sequence>
+					<xs:element name="errcode" type="xs:string" />
+					<xs:element name="errtext" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+
+		</xs:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="DLValidateResponse">
+		<wsdl:part element="ns1:DLValidateResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DLValidateFaultMsg">
+		<wsdl:part element="ns1:DLValidateFault" name="DLValidateFaultMsg">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DLValidate">
+		<wsdl:part element="ns1:DLValidateRequest" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:portType name="DLService">
+		<wsdl:operation name="DLValidate">
+			<wsdl:input message="ns1:DLValidate" name="DLValidate">
+			</wsdl:input>
+			<wsdl:output message="ns1:DLValidateResponse" name="DLValidateResponse">
+			</wsdl:output>
+			<wsdl:fault message="ns1:DLValidateFaultMsg" name="DLValidateFaultMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+</wsdl:definitions>

@@ -6,8 +6,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import au.edu.unsw.soacourse.dlservice.DriversLicense;
-
 public class ADRHandler {
 	private ArrayList<Address> adr_list;
 	
@@ -27,23 +25,20 @@ public class ADRHandler {
 				
 				if (n.getNodeName().equalsIgnoreCase("fullname")) {
 					adr.setFullName(n.getTextContent());
-					System.out.println("fullname: " + n.getTextContent());
 				}
 				if (n.getNodeName().equalsIgnoreCase("address")) {
 					adr.setAddress(n.getTextContent());
-					System.out.println("address: " + n.getTextContent());
 				}
 				
 			}
-			System.out.println();
 			adr_list.add(adr);
 		}
 	}
 
 	public boolean isFound(Address adr) {
 		for(Address a : adr_list) {
-			if (a.getFullName().equals(adr.getFullName())
-					&& adr.getAddress().equals(adr.getAddress())) {
+			if (a.getFullName().equalsIgnoreCase(adr.getFullName())
+					&& adr.getAddress().equalsIgnoreCase(adr.getAddress())) {
 				return true;
 			}
 		}

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
 
 public class DLHandler {
 	private ArrayList<DriversLicense> dl_list;
@@ -39,7 +38,7 @@ public class DLHandler {
 
 	public boolean isFound(DriversLicense dl) {
 		for(DriversLicense d : dl_list) {
-			if (d.getFullName().equals(dl.getFullName())
+			if (d.getFullName().equalsIgnoreCase(dl.getFullName())
 					&& d.getDLNumber().equals(dl.getDLNumber())) {
 				return true;
 			}
