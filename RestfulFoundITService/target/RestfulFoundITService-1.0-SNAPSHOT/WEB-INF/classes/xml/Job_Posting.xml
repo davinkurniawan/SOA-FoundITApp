@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Jobs>
+	<Posting>
+		<_jobId>123</_jobId>
+		<CompanyId>175632361</CompanyId>
+		<SalaryRate>Negotiable</SalaryRate>
+		<PositionTitle>Senior Tour Consultant</PositionTitle>
+		<Location>Sydney, Australia</Location>
+		<Details>Manage a team of consultant</Details>
+		<Status>open</Status>
+	</Posting>
+	<Posting>
+		<_jobId>234</_jobId>
+		<CompanyId>175632361</CompanyId>
+		<SalaryRate>$20/hour</SalaryRate>
+		<PositionTitle>Cleaning Service</PositionTitle>
+		<Location>Sydney, Australia</Location>
+		<Details>Clean floors, available weekdays. Working hour 10:00-17:00</Details>
+		<Status>open</Status>
+	</Posting>
+	<Posting>
+		<_jobId>456</_jobId>
+		<CompanyId>47584</CompanyId>
+		<SalaryRate>$30/hour</SalaryRate>
+		<PositionTitle>Product Manager</PositionTitle>
+		<Location>Tokyo, Japan</Location>
+		<Details>Manage product detail spreadsheet and website</Details>
+		<Status>open</Status>
+	</Posting>
+</Jobs>

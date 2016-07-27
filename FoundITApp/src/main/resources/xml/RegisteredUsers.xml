@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RegisteredUsers>
+    <Entry>
+        <Email>johndoe@gmail.com</Email>
+        <Password>abc123</Password>
+        <Role>app-candidate</Role>
+    </Entry>
+    <Entry>
+        <Email>jane.d@gmail.com</Email>
+        <Password>jane123</Password>
+        <Role>app-manager</Role>
+    </Entry>
+    <Entry>
+        <Email>l.jen@gmail.com</Email>
+        <Password>ljen890</Password>
+        <Role>app-manager</Role>
+    </Entry>
+    <Entry>
+        <Email>abc@abc.com</Email>
+        <Password>12345</Password>
+        <Role>app-manager</Role>
+    </Entry>
+</RegisteredUsers>

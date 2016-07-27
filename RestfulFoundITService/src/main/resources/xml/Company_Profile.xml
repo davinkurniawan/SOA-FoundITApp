@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Profiles>
+    <Company>
+        <Name>Corporate Traveler Australia</Name>
+        <Industry>Leisure, Travel and Tourism</Industry>
+        <Employees>50001</Employees>
+        <Location>Sydney, Australia</Location>
+        <_profileId>175632361</_profileId>
+    </Company>
+    <Company>
+        <Name>IR</Name>
+        <Industry>Computer Software</Industry>
+        <Employees>201</Employees>
+        <Location>Sydney, Australia</Location>
+        <_profileId>15378</_profileId>
+    </Company>
+    <Company>
+        <Name>Rakuten</Name>
+        <Industry>Internet</Industry>
+        <Employees>10001</Employees>
+        <Location>Tokyo, Japan</Location>
+        <_profileId>47584</_profileId>
+    </Company>
+    <Company>
+        <Name>MedImmune</Name>
+        <Industry>Biotechnology</Industry>
+        <Employees>1001</Employees>
+        <Location>Gaithersburg, Maryland</Location>
+        <_profileId>6169</_profileId>
+    </Company>
+    <Company>
+        <Name>The Coca-Cola Company</Name>
+        <Industry>Food and Beverages</Industry>
+        <Employees>10001</Employees>
+        <Location>Atlanta, Georgia</Location>
+        <_profileId>1694</_profileId>
+    </Company>
+    <Company>
+        <Name>Vodafone</Name>
+        <Industry>Telecommunications</Industry>
+        <Employees>1000</Employees>
+        <Location>Sydney</Location>
+        <_profileId>1756323621</_profileId>
+    </Company>
+</Profiles>

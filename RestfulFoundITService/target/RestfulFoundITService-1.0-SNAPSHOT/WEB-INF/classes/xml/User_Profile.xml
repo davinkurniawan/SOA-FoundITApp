@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Profiles>
+    <User>
+        <PersonalDetails>
+            <FirstName>John</FirstName>
+            <LastName>Doe</LastName>
+            <Email>johndoe@gmail.com</Email>
+            <Password>abc123</Password>
+            <DriverLicenseNo>A123456</DriverLicenseNo>
+            <Address>Maroubra Road 1</Address>
+        </PersonalDetails>
+        <CurrentPosition>Unemployed</CurrentPosition>
+        <Skills>Java</Skills>
+        <Experience>3 years in Google (2010-2012)</Experience>
+        <Education>Bachelor of Science (B.Sci)</Education>
+        <_profileId>1146396800</_profileId>
+    </User>
+    <User>
+        <PersonalDetails>
+            <FirstName>Jane</FirstName>
+            <LastName>Doe</LastName>
+            <Email>jane.d@gmail.com</Email>
+            <Password>jane123</Password>
+            <DriverLicenseNo>B123456</DriverLicenseNo>
+            <Address>Kingsford Street 2</Address>
+        </PersonalDetails>
+        <CurrentPosition>Senior Recruiter</CurrentPosition>
+        <Skills>Communication</Skills>
+        <Experience>5 years in Corporate Traveler Australia (2011-2016)</Experience>
+        <Education>Bachelor of Commerce</Education>
+        <_profileId>570454891</_profileId>
+    </User>
+    <User>
+        <PersonalDetails>
+            <FirstName>Jennifer</FirstName>
+            <LastName>Lawrence</LastName>
+            <Email>l.jen@gmail.com</Email>
+            <Password>ljen890</Password>
+            <DriverLicenseNo>KP90909</DriverLicenseNo>
+            <Address>Melbourne Road 20</Address>
+        </PersonalDetails>
+        <CurrentPosition>Intern</CurrentPosition>
+        <Skills>Programming</Skills>
+        <Experience>1 year in McDonald (2015)</Experience>
+        <Education>High School Diploma</Education>
+        <_profileId>46302526</_profileId>
+    </User>
+    <User>
+        <PersonalDetails>
+            <FirstName>abc</FirstName>
+        </PersonalDetails>
+        <_profileId>1917950</_profileId>
+    </User>
+</Profiles>

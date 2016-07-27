@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Applications>
+    <Application>
+        <_appId>1231146396800</_appId>
+        <_jobId>123</_jobId>
+        <_profileId>1146396800</_profileId>
+        <CoverLetter>i am awesome</CoverLetter>
+        <Status>Submitted</Status>
+    </Application>
+    <Application>
+        <_appId>2341146396800</_appId>
+        <_jobId>234</_jobId>
+        <_profileId>1146396800</_profileId>
+        <CoverLetter>I am a passionate clean freak</CoverLetter>
+        <Status>Submitted</Status>
+    </Application>
+</Applications>
